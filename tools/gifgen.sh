@@ -73,6 +73,8 @@ input=$1
 # Show help and exit if we have no input
 [[ "$input" = "" ]] || [[ $show_help = true ]] && show_help && exit
 
+brew ls --versions ffmpeg || brew install ffmpeg
+
 # Check for ffmpeg before encoding
 type ffmpeg >/dev/null 2>&1 || {
   echo "Error: gifgen requires ffmpeg to be installed"
