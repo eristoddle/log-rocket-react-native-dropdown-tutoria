@@ -56,7 +56,7 @@
     "max-len": [
       "warn",
       {
-        "code": 120
+        "code": 80
       }
     ],
     "no-unused-expressions": [2, {
