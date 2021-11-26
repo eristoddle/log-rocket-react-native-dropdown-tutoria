@@ -1,9 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Dropdown from './src/components/Dropdown';
 
-export default function App() {
+const App: FC = () => {
   const [selected, setSelected] = useState(undefined);
   const data = [
     { label: 'One', value: '1' },
@@ -20,12 +19,11 @@ export default function App() {
           Selected: label = {selected.label} and value = {selected.value}
         </Text>
       )}
-      <Dropdown label={'Select Item'} data={data} onSelect={setSelected} />
+      <Dropdown label="Select Item" data={data} onSelect={setSelected} />
       <Text>This is the rest of the form.</Text>
-      <StatusBar style="auto" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -36,3 +34,5 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
 });
+
+export default App;

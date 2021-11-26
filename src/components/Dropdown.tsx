@@ -15,7 +15,7 @@ interface Props {
   onSelect: (item: { label: string; value: string }) => void;
 }
 
-const Dropdown: FC<Props> = function ({ label, data, onSelect }) {
+const Dropdown: FC<Props> = ({ label, data, onSelect }) => {
   const DropdownButton = useRef();
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState(undefined);
@@ -65,7 +65,7 @@ const Dropdown: FC<Props> = function ({ label, data, onSelect }) {
 
   return (
     <TouchableOpacity
-     ref={DropdownButton}
+      ref={DropdownButton}
       style={styles.button}
       onPress={toggleDropdown}
     >
